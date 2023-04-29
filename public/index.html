@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title id="judul">MathBrain - Aritmatika Sosial</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Pembelajaran Digital Berbasis Web Aplikasi Materi Aritmatika Sosial" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#845ec2" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <link rel="stylesheet" href="css/rumus.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-white dark:bg-black">
+    <div class="app-layout mx-auto px-2">
+        <section id="bottom-navigation" class="w-full fixed inset-x-0 bottom-0 z-10 flex justify-center items-center">
+        </section>
+        <header class="bg-white dark:bg-gray-300 p-3 shadow-xl h-16 rounded-b-xl">
+            <nav class="flex justify-between items-center">
+                <img src="logo.png" width="30" alt="logo" class="rounded-full bg-white">
+                <a href="/" class="title-heading text-md font-bold"> MathBrain - Aritmatika Sosial</a>
+                <label class="switch text-yellow-500">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+						</path>
+					</svg>
+					<div>
+						<input type="checkbox" id="modedark" />
+						<span class="slider round"></span>
+					</div>
+				</label>
+            </nav>
+        </header>
+        <div class="container mt-3 sm:mb-20" id="content">
+
+        </div>
+    </div>
+    <footer class=" fixed bottom-12 flex justify-center items-center w-full p-4 text-xs z-0">
+        <p class="p-2 rounded-xl">Dibuat dengan <i class="fas fa-heart text-red-400 mx-2"></i> MathBrain</p>
+    </footer>
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script id="MathJax-script " async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js "></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
+    <script src="scripts/nav.js" charset="utf-8"></script>
+    <script src="scripts/barisan-bilangan.js" charset="utf-8"></script>
+    <script src="scripts/barisan-divergen.js" charset="utf-8"></script>
+    <script src="scripts/konvergen.js" charset="utf-8"></script>
+    <script src="scripts/limit-fungsi.js" charset="utf-8"></script>
+    <script src="scripts/limit.js" charset="utf-8"></script>
+    <script src="scripts/darkmode.js" charset="utf-8"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            }
+        };
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function() {
+                this.navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then(function() {
+                        console.log("Pendaftaran serviceWorker berhasil");
+                    })
+                    .catch(function() {
+                        console.log("Pendaftaran serviceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser");
+        }
+    </script>
+
+</body>
+</body>
+
+</html>
